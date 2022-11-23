@@ -11,10 +11,9 @@ Inspired by how humans often learn to recognize different objects by looking at 
 # Model performance
 | Model | Accuracy | F1-Score | Precision | Recall |
 | :-----: | :---: | :---: | :---: | :---: |
-| ResNet-152  | 0.7668±0.0074  | 0.7581±0.0079   | 0.7654±0.0080   | 0.7668±0.0074   |
-| API-Net (ResNet-152)  | 0.7802±0.0030 | 0.7653±0.0084 | 0.7727±0.0057 | 0.7743±0.0054 |
-| API-Net (DenseNet-121) with gradual unfreezing  | 0.7892±0.0104  | 0.7964±0.0120  | 0.7871±0.0108  | 0.7892±0.0104  |
-
+| ResNet-152  | 0.7668&pm0.0074  | 0.7581&pm0.0079   | 0.7654&pm0.0080   | 0.7668&pm0.0074   |
+| API-Net (ResNet-152)  | 0.7802&pm0.0030 | 0.7653&pm0.0084 | 0.7727&pm0.0057 | 0.7743&pm0.0054 |
+| API-Net (ResNet-121) with gradual unfreezing  | 0.7892&pm0.0104  | 0.7964&pm0.0120  | 0.7871&pm0.0108  | 0.7892&pm0.0104  |
 
 # Contact:
 Please feel free to contact raksit.r@hotmail.com or chaipat.c@chula.ac.th, if you have any questions.
