@@ -1,18 +1,9 @@
 import tensorflow as tf
-import tensorflow_addons as tfa
 from tensorflow.keras.applications.imagenet_utils import preprocess_input
 from tensorflow import keras
 from tensorflow.keras import layers
-from tensorflow.keras import Model, Input
-from tensorflow.keras.optimizers import Adam
-
-from tensorflow.keras import backend
-
-from tensorflow.keras.applications.efficientnet import EfficientNetB0
-from tensorflow.keras.applications import DenseNet201, ResNet152, VGG16, VGG19, ResNet50, NASNetLarge
-from tensorflow.keras import mixed_precision
-from sklearn.metrics import  accuracy_score, f1_score, roc_auc_score, average_precision_score, precision_score, recall_score
-from sklearn.metrics.pairwise import euclidean_distances
+from tensorflow.keras import Model
+from tensorflow.keras.applications import ResNet152
 
 
 class MultiAttBlock(Model):
@@ -94,10 +85,10 @@ class API(tf.keras.Model):
 
 class Classifier(tf.keras.Model):
 
-    def __init__(self,image_height,image_width):
+    def __init__(self):
         super().__init__()
         self.imagenet_model = ResNet152(
-                                input_shape=(image_height,image_width,3),
+                                input_shape=(256,256,3),
                                 weights="imagenet",
                                 include_top=False)
                                 
@@ -126,27 +117,6 @@ class Classifier(tf.keras.Model):
         embedding = self.avg_pool(embedding)
         
         return embedding
-    
-    def train_projection(self, inputs):
-        
-        embedding = self.imagenet_model(inputs)
-
-        embedding = self.avg_pool(embedding)
-        embedding = self.proj(embedding)
-        
-        return embedding
-    
-    def get_att(self, inputs_1, inputs_2):
-        
-        embedding_1 = self.imagenet_model(inputs_1)
-        embedding_2 = self.imagenet_model(inputs_2)
-                
-        x_1 = self.avg_pool(embedding_1)
-        x_2 = self.avg_pool(embedding_2)
-
-        g_1, g_2 = self.api.get_att(x_1, x_2)
-        
-        return embedding_1, embedding_2, g_1, g_2
     
     def train_pair(self, inputs_1, inputs_2):
         
