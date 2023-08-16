@@ -295,10 +295,11 @@ def train_val_epoch(model, epoch, max_epoch,
                 chosen_list_2 = construct_pair(X_aug_first_embedding, y_first, 
                                              X_aug_second_embedding, y_second)
                 
-                X_aug_new_ord, X_aug_pair_new_ord, y_new_ord, y_pair_new_ord = create_pair_batch(X_aug, y, 
-                                                                                                 X_aug_first, y_first, 
-                                                                                               X_aug_second, y_second, 
-                                                                                               chosen_list_1, chosen_list_2,None)
+                X_aug_new_ord, X_aug_pair_new_ord, y_new_ord, y_pair_new_ord = create_pair_batch(X_aug_first, y_first, 
+                                                                                                 X_aug_second, y_second, 
+                                                                                               X_aug, y, 
+                                                                                               chosen_list_2, None, chosen_list_1)
+                  
                                      
                 X_aug_new_ord = tf.stack(X_aug_new_ord)
                 X_aug_pair_new_ord = tf.stack(X_aug_pair_new_ord)
