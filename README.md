@@ -15,7 +15,7 @@ Create Conda Environment:
 ` conda env create -f environment.yml `
 
 Then run:
-` py train.py `
+`python train.py --data ./clock_shulman/clock_shulman`
 
 # Model performance
 | Model | Accuracy | F1-Score | Precision | Recall |
