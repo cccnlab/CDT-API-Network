@@ -40,7 +40,7 @@ def main():
     for i in label_folder:
         for j in glob(i+"/*", recursive = True):
             images.append(j)
-            labels.append(int(i.split("/")[2][0]))
+            labels.append(int(i.split("/")[-1][0]))
 
     print("Split data")
     X_train, X_val, y_train, y_val = train_test_split(images, 
