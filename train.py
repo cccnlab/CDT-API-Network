@@ -89,7 +89,7 @@ def main():
 
     train_loss = []
     val_loss = []
-
+    min_val_loss = np.inf
     print("Train model")
     for epoch in np.arange(1, (args.epochs) + 1):
     
