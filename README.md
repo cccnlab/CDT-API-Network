@@ -25,4 +25,5 @@ Then run:
 | API-Net (ResNet-121) with gradual unfreezing  | 0.7892±0.0104  | 0.7964±0.0120  | 0.7871±0.0108  | 0.7892±0.0104  |
 
 # Contact:
-Please feel free to contact raksit.r@hotmail.com or chaipat.c@chula.ac.th, if you have any questions.
+Please feel free to contact raksit.r@hotmail.com or chaipat.c@chula.ac.th, if you have any questions about the dataset.
+We encourage you to use GitHub issues to report and discuss bugs or problems you have encountered. This will help other people who face similar issues in the future.
